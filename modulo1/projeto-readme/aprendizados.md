@@ -1,0 +1,2 @@
+# Aprendizado da semana 
+Nessa semana aprendi os comandos mais utilizados no terminal e a utilizá-los com eficiência até (obs: para minha surpresa), aprendi a enviar minhas branchs para o git hub, e o mais incrível é ver que o exercício teve efeito e já consigo fazer sem o passo a passo, mais uma vez para minha surpresa, pois o primeiro dia de aprendizado foi de enlouquecer rs. **Se tivesse como colocaria meu joinha aqui** rsrs.
