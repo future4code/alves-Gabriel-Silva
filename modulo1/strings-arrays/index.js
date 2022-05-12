@@ -54,7 +54,7 @@ console.log('f. ', valor)
 // exercicio 2
 
 // parte(a):
-let comidasPreferidas = ['lasanha', "feijoada", "moqueca de camarão", "pizza", "coxinha"]
+//let comidasPreferidas = ['lasanha', "feijoada", "moqueca de camarão", "pizza", "coxinha"]
 
 //console.log(comidasPreferidas)
 
@@ -89,4 +89,4 @@ let resposta =(prompt("Digite o número da tarefa que já realizou:", tarefa1, t
 // parte(e)
 listaDeTarefas.splice(resposta,1)
 
-console.log(listaDeTarefas)          //CORRIGIDO!!!
+console.log(listaDeTarefas)          //CORRIGIDO
