@@ -77,17 +77,16 @@ let listaDeTarefas = []
 let tarefa1 = prompt("Digite uma tarefa que fará hoje")
 let tarefa2 = prompt("Digite outra tarefa que fará hoje")
 let tarefa3 = prompt("Digite mais uma tarefa que fará hoje")
- listaDeTarefas = [`${tarefa1}, ${tarefa2}, ${tarefa3}`]
+ listaDeTarefas = [tarefa1, tarefa2, tarefa3]
 
 // //parte(c) 
-console.log("0-", tarefa1, "1-", tarefa2, "2-", tarefa3)
+console.log("1-", tarefa1, "2-", tarefa2, "3-", tarefa3)
 
 // //parte(d)
  
-let resposta =(prompt("Digite o número da tarefa que já realizou:", tarefa1, tarefa2, tarefa3 ))
+let resposta =(prompt("Digite o número da tarefa que já realizou:", tarefa1, tarefa2, tarefa3 ))-1
 
-// //parte(e)
+// parte(e)
+listaDeTarefas.splice(resposta,1)
 
-listaDeTarefas.splice(resposta, 1)-1// não consegui eliminar o que precisava
-
-console.log(listaDeTarefas)
+console.log(listaDeTarefas)          //CORRIGIDO!!!
