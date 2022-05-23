@@ -12,14 +12,7 @@
    //  console.log(`Parabéns você ganhoou!`)
  */
 
-//  ####  parece algo tão simples, o código principal onde tem td é tão reduzido, conseguiria terminar só com if/else mas não estou satisfeito com o tamanho disso.
-// Mas também não consigo aplicar o loop direito, já fiz e refiz de formas diferentes, prefiro rever tudo e tentar fazer de forma mais organizada.  
-// Já não penso mais com clareza..
-
- const carta = comprarCarta()
-//  console.log(carta.texto)
-//  console.log(carta.texto)
-   
+ 
  if (confirm("Quer iniciar uma nova rodada?") === true) {
     console.log("Boas vindas ao jogo de Blackjack!")
     } else if (confirm !== true) {
@@ -33,30 +26,24 @@
     
 
     const verificaVencedor = (cartaUser, cartaUser2, cartaPc, cartaPc2) =>{
-       cartaUsuario = cartaUser
-       cartaUsuario2 = cartaUser2
-       cartaComputador = cartaPc
-       cartaComputador2 = cartaPc2
-       console.log(cartaUsuario.valor, cartaUsuario.texto)
-       pontosUser = cartaUsuario.valor + cartaUsuario2.valor
-       pontosPc = cartaComputador.valor + cartaComputador2.valor
-       console.log(pontosUser, pontosPc)
-       }
 
+       pontosUser = cartaUser.valor + cartaUser2.valor
+       pontosPc = cartaPc.valor + cartaPc2.valor
 
-//     if(pontosUser > pontosPc){
-//       console.log('Você ganhou! Suas cartas foram:')
-     
-//    if (pontosPc > pontosUser){
-//       console.log('vencedor: pc')
-      
-//    }else if(pontosUser == pontosPc){
-//       console.log('Houve um empate, vamos jogar de novo!')
-//    }
+       if (pontosPc > pontosUser){
+         console.log(`Computador ganhou.\n As cartas do computador foram: ${cartaPc.texto} e ${cartaPc2.texto}, somando ${pontosPc} pontos.`)
+         console.log(`Suas cartas foram ${cartaUser.texto} e ${cartaUser2.texto}, somando ${pontosUser} pontos`) 
 
-// }
+         } if (pontosUser > pontosPc) {
+          console.log(`Parabéns você ganhou!\n Suas cartas foram ${cartaUser.texto} e ${cartaUser2.texto}, somando ${pontosUser} pontos`)
+          console.log(`As cartas do computador foram: ${cartaPc.texto} e ${cartaPc2.texto}, somando ${pontosPc} pontos.`)
+
+         }else if (pontosPc === pontosUser){
+          console.log("Empate! Vamos jogar de novo?")
+         }
+         } 
+
  verificaVencedor(cartaUser, cartaUser2, cartaPc, cartaPc2)
-    
-
-
-    
+  
+//  OBS: Achei legalzinho de fazer, na verdade foi até simples, não fiz o desafio pois não estava legal pra fazer, acho que o desafio seria mais interessante até, 
+// queria usar mais do que vi nas aulas, como o loop, embora ainda esteja um pouco atrapalhado em como realmente implementar em funcões e afins.
