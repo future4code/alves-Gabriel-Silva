@@ -21,9 +21,25 @@ function retornaArrayOrdenado(array) {
   }
 
 // EXERCÍCIO 04
+// tentei um monte de maneiras pra fazer isso, travei nesse de um jeito que nem passei pors seguintes, tô com cabeça pra isso hj n. já vi vídeos de resolução específicos, assisti o plantão e nada...  
 function retornaNumerosPares(array) {
-  
+   let arrayPar = array.filter((item) => {
+    if (item % 2 === 0){
+    return arrayPar.push(item)
+    }
+    }) 
+    
+  // arrayPar = []
+  // array.filter((array) => {
+  //   for (i = 0; i < array.length; i++){
+  //     if( array[i] % 2 === 0){
+  //      arrayPar.push(i)
+  //     }
+  //     return arrayPar
+  //   }
+  // })
 }
+
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
