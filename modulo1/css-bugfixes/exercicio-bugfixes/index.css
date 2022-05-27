@@ -5,7 +5,7 @@
   **/
 
 * {
-    margin: 0;
+    margin: auto;
     padding: 0;
 }
 
@@ -31,7 +31,8 @@ img {
 
 div>p:first-child {
     display: inline-block;
-    padding-top: 150px;
+    margin-top: 150px;
+    /* word-break:  ; */
 }
 
 div img {
