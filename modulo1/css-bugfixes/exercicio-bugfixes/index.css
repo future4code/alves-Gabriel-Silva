@@ -61,6 +61,7 @@ div img {
 
 .icone {
     height: 15px;
+    color: white;
 }
 
 
@@ -112,6 +113,13 @@ td button {
     height: 30px;
     border-radius: 5px;
     color: black;
+}
+.comprar:hover{
+    background-color: rgb(217, 214, 214);
+}
+
+.comprar:active{
+    color: white;
 }
 
 .container-do-search {
