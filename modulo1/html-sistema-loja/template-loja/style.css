@@ -1,0 +1,55 @@
+/* Requisitos:
+
+- O site deve conter cabeçalho e rodapé
+- Dever ter mantido o número de páginas de ontem
+- **Todas as páginas do site devem passar por algum tipo de estilização** */
+
+
+/* ######### Caiu a energia na região. Voltou agora às 22:30, então estou enviando com apenas a primeira página estilizada e ainda um pouco incompleta */
+
+/* Página inicial */
+
+.body{
+    background-color: rgb(240, 116, 70);
+}
+
+.titulo {
+    background-color: black;
+    color: rgb(214, 210, 249);
+    display: inline-block;
+    margin: 30px 30px;
+}
+
+.links{
+    background-color: black;
+    color:#d6d2f9;
+     margin: 10px 400px 10px 30px;
+     display: inline-block;
+}
+
+.linkInicial{
+    background-color: black;
+    color: rgb(214, 210, 249);
+
+} 
+
+.estoque{
+    background-color: black;
+    color: rgb(214, 210, 249);
+}
+
+.addProduto{
+    background-color: black;
+    color: rgb(214, 210, 249);
+}
+
+.funcionarios{
+    background-color: black;
+    color: rgb(214, 210, 249);
+}
+
+.redesSociais {
+    background-color: black;
+    color: yellow;
+    display: inline;
+}
