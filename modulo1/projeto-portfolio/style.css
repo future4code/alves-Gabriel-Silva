@@ -1,0 +1,48 @@
+#body {
+    background-color: black;
+    margin: 30PX;
+}
+
+.logo {
+    display: inline-block;
+    margin-left: 90px;
+    width: 850px;
+    height: 350px;
+}
+
+.linguagens{
+    display: inline;
+    margin: auto;
+width: 450px;
+height: 350px;
+}
+/* .section1{} */
+
+/* .section2{
+    margin-left: 90px;
+    margin-right: 80px;
+} */
+
+.saudacao{
+    color: aquamarine;
+    font-size: 40px;
+    display: block;
+    margin-top: 200px;
+    margin-left: 190px;
+    margin-right: 200px;
+    margin-bottom: 150px;
+}
+
+.section3{
+    background-color: aquamarine;
+    display: block;
+    margin-left: 90px;
+    margin-right: 80px;
+}
+
+.instituicao-ensino{
+    background-color: white;
+}
+/* .link-labenu{
+    color: white;
+} */
