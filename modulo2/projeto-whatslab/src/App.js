@@ -1,17 +1,20 @@
-import logo from '';
-import '';
+import React from "react";
+import Header from "./componentes/componentes"
+// import styled from "styled-components";
 
 function App() {
   return (
-    <div className="App"> {/*usar width 40% center*/}
-      <header className="App-header">
+    <body> 
+      <header>
         <div>{/* ícone/foto de usuário + nome que ao clicar leva a mais informações + uma nave de opções*/}</div>
       </header>
-      <body>
+     
+      <main>
+      <Header/>
         {/*fazer aparecer as mensagens enviadas*/}
-      </body>
+      </main>
       <footer>{/*colocar dois inputs, um para envio do nome de usuário e outro input para a mensagem, e um button para envio de ambos */}</footer>
-    </div>
+    </body>
   );
 }
 
