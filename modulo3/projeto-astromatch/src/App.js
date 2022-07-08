@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { TelaInicial } from './Componentes/TelaInicial/TelaInicial'
 import { TelaMatches } from './Componentes/TelaMatches/TelaMatches'
 import { Header} from './Componentes/Header/Header'
+import { Body } from './styledApp'
 
 
 export default function App() {
@@ -22,9 +23,9 @@ export default function App() {
   }
 
   return (
-    <div>
-      <Header trocarTela={trocarTela}/>
+    <Body>
+      <Header trocarTela={trocarTela} telaAtual={telaAtual}/>
       {escolheTela()}
-    </div>
+    </Body>
   )
 }

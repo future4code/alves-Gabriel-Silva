@@ -6,7 +6,8 @@ export function Header(props){
         <div>
             <HeaderStyle>
                 <p>criar logo</p>
-                <button onClick={props.trocarTela}>trocar tela</button>
+                {props.telaAtual === true ? <button onClick={() => props.trocarTela(false)}>Matches </button> :
+                <button onClick={() => props.trocarTela(true)}>Tela inicial</button>}
             </HeaderStyle>
         </div>
     )
