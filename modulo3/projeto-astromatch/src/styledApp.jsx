@@ -4,7 +4,8 @@ export const Body = styled.div`
 display: flex;
 flex-direction: column;
 justify-items: center;
-width: 40vw;
-border: 1px solid black;
+width: 35vw;
+height: 100%;
 margin: auto;
+background-color: rgb(208 208 208);
 `

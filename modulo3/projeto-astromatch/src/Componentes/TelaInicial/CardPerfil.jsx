@@ -4,10 +4,15 @@ import { Figure } from './styled'
 import { Card } from './styled'
 import { Img } from './styled'
 import { Section } from './styled'
-
+import { Alternativa } from './styled'
+import { GrPowerReset } from 'react-icons/gr';
+import { Button } from './styled'
+import { Alerta } from './styled'
+import { Paragrafo } from './styled'
+import { PFixo } from './styled'
 export function CardPerfil() {
 
-    const [perfil, setPerfil] = useState({})
+    const [perfil, setPerfil] = useState()
 
     useEffect(() => {
         buscaPerfil()
@@ -16,11 +21,10 @@ export function CardPerfil() {
     const buscaPerfil = () => {
         const url = "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/gabriel-santos-alves/person"
         axios.get(url)
-            .then(res => { setPerfil(res.data.profile)})
+            .then(res => { setPerfil(res.data.profile) })
 
             .catch(erro => (console.log(erro.response)))
     }
-    console.log(perfil)
 
     const likeDislike = (id, escolha) => {
         console.log(id, escolha)
@@ -37,30 +41,43 @@ export function CardPerfil() {
             .catch(erro => { console.log(erro) })
     }
 
+    const resetarPerfis = () => {
+        const url = "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/gabriel-santos-alves/clear"
+        axios.put(url)
+            .then((res) => {
+                buscaPerfil()
+            })
+            .catch(erro => { console.log(erro.response) })
+    }
+
+    const nome = <PFixo>Nome: </PFixo>
+    const idade = <PFixo>Idade: </PFixo>
+    const bio = <PFixo> Bio: </PFixo>
+
     return (
         <Card>
-            {   perfil.photo === true?
+            {perfil ?
                 <div>
                     <Figure>
                         <Img src={perfil.photo} alt={perfil.photo_alt} />
                     </Figure>
                     <Section>
-                        <p>{perfil.name}</p>
-                        <p>{perfil.age}</p>
-                        <p>{perfil.bio}</p>
                         <button onClick={() => likeDislike(perfil.id, true)}>like</button>
                         <button onClick={() => likeDislike(perfil.id, false)}>dislike</button>
                     </Section>
+                    <Section>
+                        <Paragrafo>{nome} {perfil.name}</Paragrafo>
+                        <Paragrafo>{idade} {perfil.age}</Paragrafo>
+                        <Paragrafo>{bio} {perfil.bio}</Paragrafo>
+                    </Section>
                 </div> :
-                <button>Resetar perfis</button>
+                <Alternativa>
+                    <Alerta>Todos os perfis disponíneis foram visualizados, resete os perfis para visualizá-los novamente clicando no botão abaixo.</Alerta>
+                    <Button onClick={resetarPerfis}>
+                        <GrPowerReset />
+                    </Button>
+                </Alternativa>
             }
         </Card>
     )
 }
-
-// age: 23
-// bio: "Interessada em construir uma família e proteger os desamparados"
-// id: "OS2w9vU9AUkmXhp4sZ7M"
-// name: "Leia Organa"
-// photo: "https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/Princess_Leia%27s_characteristic_hairstyle.jpg/220px-Princess_Leia%27s_characteristic_hairstyle.jpg"
-// photo_alt: "Mulher de pele clara e cabelo castanho escuro longo vestindo uma roupa branca e carregando uma arma de fogo."
