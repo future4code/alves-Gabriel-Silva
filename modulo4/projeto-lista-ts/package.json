@@ -4,9 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "exercicio1": "clear && tsc && node ./build/packages/exercicio1/exercicio1.js",
+    "exercicio2": "clear && tsc && node ./build/packages/exercicio2/exercicio2.js",
+    "exercicio3": "clear && tsc && node ./build/packages/exercicio3/exercicio3.js",
+    "exercicio4": "clear && tsc && node ./build/packages/exercicio4/exercicio4.js",
+    "exercicio5": "clear && tsc && node ./build/packages/exercicio5/exercicio5.js",
+    "exercicio6": "clear && tsc && node ./build/packages/exercicio6/exercicio6.js",
+    "exercicio7": "clear && tsc && node ./build/packages/exercicio7/exercicio7.js",
+    "exercicio8": "clear && tsc && node ./build/packages/exercicio8/exercicio8.js",
+    "exercicio9": "clear && tsc && node ./build/packages/exercicio9/exercicio9.js",
+    "exercicio10": "clear && tsc && node ./build/packages/exercicio10/exercicio10.js",
+    "exercicio11": "clear && tsc && node ./build/packages/exercicio11/exercicio11.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "gabriel",
+  "license": "ISC",
+  "dependencies": {
+    "process.argv": "^0.6.0",
+    "typescript": "^4.7.4"
+  }
 }
