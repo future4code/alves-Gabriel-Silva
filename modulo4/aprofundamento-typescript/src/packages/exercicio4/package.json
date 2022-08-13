@@ -1,0 +1,12 @@
+{
+  "name": "exercicio4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "exercicio4.js",
+  "scripts": {
+    "start": "node ./exercicio4.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
