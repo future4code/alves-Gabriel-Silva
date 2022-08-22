@@ -13,9 +13,23 @@ export type User ={
 }
 
 export const users:User[] = [
+
     {
         nome: "Gabriel",
-        CPF: 1,
+        CPF: 12345678911,
+        nascimento: "10/10/1990",
+        saldo: 10.35,
+        extrato: [
+            {
+                valor: 0,
+                data: "",
+                descricao: ""
+            }
+        ]
+    },
+    {
+        nome: "João",
+        CPF: 12345678912,
         nascimento: "10/10/1990",
         saldo: 10.35,
         extrato: [
