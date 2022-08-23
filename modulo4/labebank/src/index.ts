@@ -95,7 +95,13 @@ app.put("/user/saldo/add", (req: Request, res: Response) => {
 
     const { nome, cpf, valor } = req.body
 
-    let index = users.findIndex(index => index.CPF === Number(cpf))
+    let index = users.findIndex(index => index.CPF === Number(cpf) && index.nome === String(nome))
+
+    if (index === -1) {
+        res.statusCode = 404
+        throw new Error("Usuário referente aos dados inseridos não encontrado")
+    }
+
     let saldo = users[index].saldo + Number(valor)
 
     try {
@@ -103,20 +109,15 @@ app.put("/user/saldo/add", (req: Request, res: Response) => {
             res.statusCode = 422
             throw new Error("Por Favor, insira valores válidos")
         }
-        if (index === -1) {
-            res.statusCode = 404
-            throw new Error("Usuário referente aos dados inseridos não encontrado")
-        }
         if (index !== -1) {
             users[index].saldo = saldo
         }
-
         res.send(`Depósito realizado com sucesso! Seu saldo atual é: R$ ${saldo}`)
 
     } catch (error: any) {
         res.status(res.statusCode || 500).send({ message: error.message })
     }
-}) 
+})
 
 app.post("/user/pagamento", (req: Request, res: Response) => {
 
@@ -177,9 +178,6 @@ app.put("/user/transferencia", (req: Request, res: Response) => {
     const remetente = users.findIndex(user => user.CPF === Number(cpfReme) && user.nome === String(nomeReme))
     const destinatario = users.findIndex(dest => dest.CPF === Number(cpfDest) && dest.nome === String(nomeDest))
 
-    let saldoRemetente = users[remetente].saldo - Number(valor)
-    let saldoDEstinatario = users[destinatario].saldo + Number(valor)
-
     try {
         if (!Number(cpfReme) || !nomeReme || !Number(cpfDest) || !nomeDest || !Number(valor) ||
             cpfReme.length < 11 || cpfDest.length > 11 || remetente === -1 || destinatario === -1) {
@@ -191,6 +189,9 @@ app.put("/user/transferencia", (req: Request, res: Response) => {
             res.statusCode = 401
             throw new Error(`Você não tem saldo suficiente para realizar esta operação, seu saldo é de R$ ${users[remetente].saldo}.`)
         }
+
+        let saldoRemetente = users[remetente].saldo - Number(valor)
+        let saldoDEstinatario = users[destinatario].saldo + Number(valor)
 
         users[remetente].saldo = saldoRemetente
         users[destinatario].saldo = saldoDEstinatario
