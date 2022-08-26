@@ -1,0 +1,18 @@
+{
+    "compilerOptions" : {
+        "noImplicitAny" : true ,
+        "removeComments" : true ,
+        "preserveConstEnums" : true ,
+        "outDir" : "build" ,
+        "sourceMap" : true ,
+        "target" : "es6" ,
+        "rootDir" : "./src" , 
+        "module" : "commonjs"
+    } ,
+    "incluir" : [
+        "src/**/*"
+,        "tsconfig.json"     ] ,
+    "excluir" : [
+        "node_modules"
+    ]
+}
