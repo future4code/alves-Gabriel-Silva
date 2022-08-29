@@ -1,0 +1,35 @@
+POST http://localhost:3003/add/user
+Content-Type: application/json
+
+{
+    "name": "teste4",
+    "nick": "test4",
+    "email": "tste4@tst.tst"
+};
+
+###
+
+GET http://localhost:3003/user/1
+
+###
+
+PUT  http://localhost:3003/user/edit/1
+Content-Type: application/json
+
+{
+    "name": "Astro Dev",
+    "nick": "astrodev"
+};
+
+###
+
+POST http://localhost:3003/task
+
+###
+Content-Type: application/json
+{
+	"title": "Criar banco dos alunos",
+	"description": "Devemos criar o banco dos alunos para o módulo do backend",
+	"limit_date": "2020/05/04",
+	"user_id": "1"
+};

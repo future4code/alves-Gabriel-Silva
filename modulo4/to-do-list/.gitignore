@@ -1,4 +1,4 @@
-/node_modules
+node_modueles
 .env
-/build
 package-lock.json
+build
