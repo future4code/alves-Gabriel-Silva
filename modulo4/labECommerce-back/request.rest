@@ -1,0 +1,43 @@
+GET http://localhost:3003/users
+
+###
+
+POST http://localhost:3003/users
+Content-Type: application/json
+
+{
+    "name": "Teste Da Silva",
+    "email": "teste@gmail.com",
+    "password": "t6e2s7t3e"
+}
+
+###
+
+POST http://localhost:3003/products
+Content-Type: application/json
+
+{
+    "name": "bale de mascar",
+    "price": "0.50",
+    "image_url": "teste"
+}
+
+###
+
+GET http://localhost:3003/products
+
+###
+
+POST http://localhost:3003/purchases
+Content-Type: application/json
+
+{
+    "user_id": "1662059321221", 
+    "product_id": "1662068508209", 
+    "quantity": "3", 
+    "total_price": "10.55"
+}
+
+###
+
+GET http://localhost:3003/users/1662059321221/purchases
