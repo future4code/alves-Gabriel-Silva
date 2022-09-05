@@ -6,25 +6,25 @@ POST http://localhost:3003/users
 Content-Type: application/json
 
 {
-    "name": "Teste Da Silva",
-    "email": "teste@gmail.com",
+    "name": "User teste",
+    "email": "aaaaaaaaaaaaaaaaaaabbbaaaaaaaaaaaaaa@gmail.com",
     "password": "t6e2s7t3e"
 }
 
 ###
 
-POST http://localhost:3003/products
+POST http://localhost:3003/products?search=b&sort=price&order=desc
 Content-Type: application/json
 
 {
-    "name": "bale de mascar",
-    "price": "0.50",
-    "image_url": "teste"
+    "name": "açaí",
+    "price": "10.00",
+    "image_url": "sem img :/"
 }
 
 ###
 
-GET http://localhost:3003/products
+GET http://localhost:3003/products?search=&sort=name&order=desc
 
 ###
 
@@ -33,9 +33,8 @@ Content-Type: application/json
 
 {
     "user_id": "1662059321221", 
-    "product_id": "1662068508209", 
-    "quantity": "3", 
-    "total_price": "10.55"
+    "product_id": "1662153092750", 
+    "quantity": "5"
 }
 
 ###

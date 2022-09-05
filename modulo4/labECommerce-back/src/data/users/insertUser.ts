@@ -1,5 +1,5 @@
-import {User} from "../types";
-import connection from "./connection";
+import {User} from "../../types";
+import connection from "../connection";
 
 const insertUser = async (user: User): Promise<void> =>{
     try {

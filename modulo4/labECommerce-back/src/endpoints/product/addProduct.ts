@@ -1,10 +1,15 @@
 import { Request, Response } from "express";
-import { Product } from "../types";
-import insertProduct from '../data/insertProduct'
+import { Product } from "../../types";
+import insertProduct from '../../data/products/insertProduct'
 
 const addProducts = async (req: Request, res: Response): Promise<void> => {
     try {
         const { name, price, image_url } = req.body
+
+        if(!name || !Number(price) || !image_url){
+            res.statusCode = 400
+            throw new Error("Dados não atendem aos requisitos para inserção de produtos.")
+        }
 
         const product: Product = {
             id: Date.now().toString(),
@@ -22,7 +27,7 @@ const addProducts = async (req: Request, res: Response): Promise<void> => {
             res.send(error)
         } else {
 
-            res.status(500).send(error.sqlMessage || error.message)
+            res.status(res.statusCode || 500).send(error.message)
         }
     }
 

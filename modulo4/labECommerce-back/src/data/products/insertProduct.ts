@@ -1,5 +1,5 @@
-import { Product } from "../types";
-import connection from "./connection";
+import { Product } from "../../types";
+import connection from "../connection";
 
 const insertProduct = async (produto: Product): Promise<void> => {
     try {

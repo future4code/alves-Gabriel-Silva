@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import selectUsers from "../data/selectUser";
-import { User } from "../types";
+import selectUsers from "../../data/users/selectUser";
+import { User } from "../../types";
 
 const getUsers = async (req: Request, res: Response): Promise<void> => {
     try {
@@ -13,8 +13,8 @@ const getUsers = async (req: Request, res: Response): Promise<void> => {
 
             res.send(error)
         } else {
-
-            res.status(500).send(error.sqlMessage || error.message)
+            
+            res.status(500).send(error.message)
         }
     }
 }

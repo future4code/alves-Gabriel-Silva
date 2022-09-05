@@ -1,21 +1,23 @@
 import app from "./app";
-import selectPurcharses from "./data/selectPurchases";
-import addProducts from "./endpoints/addProduct";
-import addPurchar from "./endpoints/addPurchar";
-import createUser from "./endpoints/createUser";
-import getProducts from "./endpoints/getProducts";
-import getPurchases from "./endpoints/getPurchases";
-import getUsers from "./endpoints/getUsers";
+import selectPrice from "./data/products/selectPrice";
+import selectPurcharses from "./data/purchases/selectPurchases";
+import addProducts from "./endpoints/product/addProduct";
+import addPurchar from "./endpoints/purchases/addPurchar";
+import createUser from "./endpoints/users/createUser";
+import getAllProducts from "./endpoints/product/getProducts";
+import getPurchases from "./endpoints/purchases/getPurchases";
+import getUsers from "./endpoints/users/getUsers";
 
 app.get("/users", getUsers)
 
 app.post("/users", createUser)
 
-app.post("/products", addProducts)
+app.get("/products", getAllProducts)
 
-app.get("/products", getProducts)
+app.post("/products", addProducts)
 
 app.post("/purchases", addPurchar)
 
-app.get("/users/:user_id/purchases", getPurchases)
+app.get("/users/:id/purchases", getPurchases)
 
+selectPrice("1662068508209")
