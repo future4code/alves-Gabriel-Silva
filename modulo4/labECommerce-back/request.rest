@@ -1,0 +1,42 @@
+GET http://localhost:3003/users
+
+###
+
+POST http://localhost:3003/users
+Content-Type: application/json
+
+{
+    "name": "User teste",
+    "email": "aaaaaaaaaaaaaaaaaaabbbaaaaaaaaaaaaaa@gmail.com",
+    "password": "t6e2s7t3e"
+}
+
+###
+
+POST http://localhost:3003/products?search=b&sort=price&order=desc
+Content-Type: application/json
+
+{
+    "name": "açaí",
+    "price": "10.00",
+    "image_url": "sem img :/"
+}
+
+###
+
+GET http://localhost:3003/products?search=&sort=name&order=desc
+
+###
+
+POST http://localhost:3003/purchases
+Content-Type: application/json
+
+{
+    "user_id": "1662059321221", 
+    "product_id": "1662153092750", 
+    "quantity": "5"
+}
+
+###
+
+GET http://localhost:3003/users/1662059321221/purchases
