@@ -1,0 +1,42 @@
+POST http://localhost:3003/user
+Content-Type: application/json
+
+{
+    "name": "Astro Bot",
+    "email": "astrobot@labenu.com",
+    "password": "123456"
+}
+
+
+###
+
+POST http://localhost:3003/login
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA0NGViNzI4LWYzZGItNDg4Zi04MTY2LTZlZDIxMGY2MTE1OSIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjMzNDY5ODQsImV4cCI6MTY2MzQzMzM4NH0.XxOukCw4PHX8lBo6iGF-S-sDfgJdt_a9VkiViirXIXU
+
+{
+    "email": "astrobot@labenu.com",
+    "password": "123456"
+}
+
+###
+
+GET http://localhost:3003/user/profile?email=astrobot@labenu.com
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA0NGViNzI4LWYzZGItNDg4Zi04MTY2LTZlZDIxMGY2MTE1OSIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjMzNDkxMjQsImV4cCI6MTY2MzQzNTUyNH0.0k1Bhtrzbylv0oorEgYOkUv6kmjNZ-dC6MGQKH9sPmk
+
+###
+
+GET http://localhost:3003/user/961a47cd-615a-46b6-ab4a-c19c9edf3056
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA0NGViNzI4LWYzZGItNDg4Zi04MTY2LTZlZDIxMGY2MTE1OSIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjMzNDkxMjQsImV4cCI6MTY2MzQzNTUyNH0.0k1Bhtrzbylv0oorEgYOkUv6kmjNZ-dC6MGQKH9sPmk
+
+###
+
+POST http://localhost:3003/recipe
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA0NGViNzI4LWYzZGItNDg4Zi04MTY2LTZlZDIxMGY2MTE1OSIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjMzNDkxMjQsImV4cCI6MTY2MzQzNTUyNH0.0k1Bhtrzbylv0oorEgYOkUv6kmjNZ-dC6MGQKH9sPmk
+
+{
+    "title": "teste",
+    "description": "Teste",
+    "image": "teste"
+}
