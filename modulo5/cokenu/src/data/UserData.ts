@@ -19,7 +19,7 @@ class UserData extends BaseDatabase {
         }
     }
 
-    findUserByEmail = async (email: string): Promise<User | undefined> => {
+    selectUserByEmail = async (email: string): Promise<User | undefined> => {
         try {
             const user = await this.getConnection()("cokenu_user")
                 .select("*")
@@ -31,16 +31,39 @@ class UserData extends BaseDatabase {
         }
     }
 
-    selectInfoUser = async(id: string):Promise<InfosUser | undefined> =>{
+    selectInfoUser = async (id: string): Promise<InfosUser | undefined> => {
         try {
-            console.log("selectInfoUser", "id:", id)
             const infos = await this.getConnection()("cokenu_user")
-            .select("name", "email")
-            .where({id: "961a47cd-615a-46b6-ab4a-c19c9edf3056"})
+                .select("id", "name", "email")
+                .where({ id })
 
             return infos[0] as InfosUser
         } catch (error: any) {
-            console.log("selectInfoUser",error.message || error.sqlMessage)
+            console.log("selectInfoUser", error.message || error.sqlMessage)
+        }
+    }
+
+    isertFollower = async (id_user_followed: string, id_follower: string): Promise<void> => {
+        try {
+            console.log("isertFFF:", id_user_followed)
+            await this.getConnection()("cokenu_follow")
+                .insert({ id_user_followed, id_follower })
+
+        } catch (error: any) {
+            console.log("insertFollower: ", error.message || error.sqlMessage)
+        }
+    }
+
+    deleteFollow = async (id_user_followed: string, id_follower: string): Promise<void> => {
+        try {
+            await this.getConnection()("cokenu_follow")
+                .delete()
+                .where({id_user_followed})
+                .andWhere({id_follower})
+
+        } catch (error: any) {
+            console.log(error.message || error.sqlMessage)
+            throw new Error(error)
         }
     }
 }

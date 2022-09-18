@@ -4,6 +4,7 @@ export enum USER_ROLES {
 }
 
 export interface InfosUser{
+    id: string,
     name: string,
     email: string
 }

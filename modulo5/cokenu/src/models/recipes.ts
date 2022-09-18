@@ -1,3 +1,35 @@
+
+export interface RecipeDB {
+    id: string,
+    title: string,
+    description: string,
+    date: string
+}
+export interface FeedDB {
+    id: string,
+    title: string,
+    description: string,
+    createDate: Date,
+    userId: string,
+    userName: string
+}
+export class Feed {
+    toRecipesModelDB = (recipes: any) => {
+        const recipesDB = recipes.map((recipe: any) => {
+            return {
+                id: recipe.id,
+                title: recipe.title,
+                description: recipe.description,
+                createDate: recipe.date,
+                userId: recipe.id_user,
+                userName: recipe.name
+            }
+        })
+
+        return recipesDB
+    }
+}
+
 export class Recipes {
     constructor(
         private id: string,
