@@ -1,0 +1,19 @@
+Exercício 1: 
+
+a) rounds seria o cost ou segurança da senha, quanto maior o número (cost) maior o tempo para hashear. Salt é são caracteres aleatórios concatenados com uma senha, o salt permite que o hash seja diferente toda vez que for gerado mesmo que a senha seja idêntica.
+
+b):
+const generateHash = async (plaintext: string) =>{
+    const rounds = Number(process.env.BCRYPT_COST)
+    const salt = await bcrypt.genSalt(rounds)
+    const hash = await bcrypt.hash(plaintext, salt)
+
+    return hash
+}
+
+c):
+const compare = async (plaintex: string, hash: string) =>{
+    return bcrypt.compare(plaintex, hash)
+}
+
+Exercício 2:
