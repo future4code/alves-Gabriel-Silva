@@ -1,0 +1,91 @@
+POST http://localhost:3003/user
+Content-Type: application/json
+
+{
+    "name": "Astro Bot",
+    "email": "astrobot@labenu.com",
+    "password": "123456"
+}
+
+
+###
+
+POST http://localhost:3003/login
+Content-Type: application/json
+
+{
+    "email": "astrodev@labenu.com",
+    "password": "123456"
+}
+
+###
+
+GET http://localhost:3003/user/profile
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA0NGViNzI4LWYzZGItNDg4Zi04MTY2LTZlZDIxMGY2MTE1OSIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjM0NDEwNzksImV4cCI6MTY2MzUyNzQ3OX0.DTx_c7RsmYK5Xvb22lp2XX-53SaS_IadXc0kPv7_HNY
+
+###
+
+GET http://localhost:3003/user/044eb728-f3db-488f-8166-6ed210f61159
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA0NGViNzI4LWYzZGItNDg4Zi04MTY2LTZlZDIxMGY2MTE1OSIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjM0NDEwNzksImV4cCI6MTY2MzUyNzQ3OX0.DTx_c7RsmYK5Xvb22lp2XX-53SaS_IadXc0kPv7_HNY
+
+###
+
+POST http://localhost:3003/recipe
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQzM2U4OWYwLTM0ODItNDM5Ni05NWFjLWJjNzQ1NDQzZmYyNiIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjM1MjI3MjcsImV4cCI6MTY2MzYwOTEyN30.dQI5wjWM2ZKL2XnCtS7RHwKn03Guy1amRvaSNYyDJnk
+
+{
+    "title": "testeDev",
+    "description": "testeDev",
+    "image": "testeDev"
+}
+
+### 
+
+GET http://localhost:3003/recipes/all
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA0NGViNzI4LWYzZGItNDg4Zi04MTY2LTZlZDIxMGY2MTE1OSIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjM0NDEwNzksImV4cCI6MTY2MzUyNzQ3OX0.DTx_c7RsmYK5Xvb22lp2XX-53SaS_IadXc0kPv7_HNY
+
+###
+
+GET http://localhost:3003/recipe/8514b1eb-245d-4dad-8cbe-da487c01a8a9
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA0NGViNzI4LWYzZGItNDg4Zi04MTY2LTZlZDIxMGY2MTE1OSIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjM0NDEwNzksImV4cCI6MTY2MzUyNzQ3OX0.DTx_c7RsmYK5Xvb22lp2XX-53SaS_IadXc0kPv7_HNY
+
+###
+
+POST http://localhost:3003/follow
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA0NGViNzI4LWYzZGItNDg4Zi04MTY2LTZlZDIxMGY2MTE1OSIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjM0NDEwNzksImV4cCI6MTY2MzUyNzQ3OX0.DTx_c7RsmYK5Xvb22lp2XX-53SaS_IadXc0kPv7_HNY
+
+{
+    "id_user": "961a47cd-615a-46b6-ab4a-c19c9edf3056"
+}
+
+###
+
+POST  http://localhost:3003/user/unfollow
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA0NGViNzI4LWYzZGItNDg4Zi04MTY2LTZlZDIxMGY2MTE1OSIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjM0NDEwNzksImV4cCI6MTY2MzUyNzQ3OX0.DTx_c7RsmYK5Xvb22lp2XX-53SaS_IadXc0kPv7_HNY
+
+{
+    "id": "961a47cd-615a-46b6-ab4a-c19c9edf3056"
+}
+
+# 044eb728-f3db-488f-8166-6ed210f61159 astrobot
+# 961a47cd-615a-46b6-ab4a-c19c9edf3056 gabriel
+# d33e89f0-3482-4396-95ac-bc745443ff26 astrodev
+
+###
+
+GET http://localhost:3003/user/feed
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQzM2U4OWYwLTM0ODItNDM5Ni05NWFjLWJjNzQ1NDQzZmYyNiIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjM1Mjc2MTMsImV4cCI6MTY2MzYxNDAxM30.JP1lGz8_b0ypZ4sWMRvQks9WG2mLqjEKaFo5PFZbttM
+
+###
+
+PUT http://localhost:3003/recipe
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQzM2U4OWYwLTM0ODItNDM5Ni05NWFjLWJjNzQ1NDQzZmYyNiIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjM1Mzg2MDEsImV4cCI6MTY2MzYyNTAwMX0.QMmtqjZmyLpMRmbdBZ0jErcWqmCVCCmnBRjf62CWv7E
+
+{   "title": "recipe alterada",
+    "description": "recipe alterada",
+    "id":"d33e89f0-3482-4396-95ac-bc745443ff26"
+}
