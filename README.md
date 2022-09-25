@@ -52,3 +52,8 @@ Funcionalidades:
  Curtir um post.
 
  Descurtir um post.
+ 
+ Como utilizar?
+ 
+ Recomendo também o uso do Postman para você testar as rotas, ele vai te ajudar a ter uma resposta "visual" das requisições e você também poderá usá-lo para enviar dados.
+ Poderá usar a versão web, basta criar uma conta no link: https://identity.getpostman.com/signup . Após criar a conta poderá usá-lo no link: https://web.postman.co/ .
