@@ -15,5 +15,14 @@ const postController = new PostController(
     )
 )
 
-// postRouter.post("/", PostController.createPost)
-// etc
+postRouter.get("/", postController.getPosts)
+
+postRouter.post("/", postController.createPost)
+
+postRouter.post("/like/:id", postController.likePost)
+
+postRouter.delete("/like/:id", postController.deleteLike)
+
+postRouter.delete("/:id", postController.deletePost)
+
+

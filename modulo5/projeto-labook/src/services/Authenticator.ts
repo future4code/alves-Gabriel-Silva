@@ -4,13 +4,13 @@ import { USER_ROLES } from '../models/User'
 
 dotenv.config()
 
-export interface ITokenPayload {
+export interface TokenPayload {
     id: string,
     role: USER_ROLES
 }
 
 export class Authenticator {
-    generateToken = (payload: ITokenPayload): string => {
+    generateToken = (payload: TokenPayload): string => {
         const token = jwt.sign(
             payload,
             process.env.JWT_KEY as string,
@@ -22,14 +22,14 @@ export class Authenticator {
         return token
     }
 
-    getTokenPayload = (token: string): ITokenPayload | null => {
+    getTokenPayload = (token: string): TokenPayload | null => {
         try {
             const payload = jwt.verify(
                 token,
                 process.env.JWT_KEY as string
             )
 
-            return payload as ITokenPayload
+            return payload as TokenPayload
         } catch (error) {
             return null
         }

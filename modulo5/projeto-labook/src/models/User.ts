@@ -18,7 +18,17 @@ export class User {
         private email: string,
         private password: string,
         private role: USER_ROLES
-    ) {}
+    ) { }
+
+    static toUserModel = (user: any) => {
+        return new User(
+            user.id,
+            user.name,
+            user.email,
+            user.password,
+            user.role
+        )
+    }
 
     public getId = () => {
         return this.id
@@ -40,10 +50,6 @@ export class User {
         return this.role
     }
 
-    public setId = (newId: string) => {
-        this.id = newId
-    }
-
     public setName = (newName: string) => {
         this.name = newName
     }
@@ -55,14 +61,25 @@ export class User {
     public setPassword = (newPassword: string) => {
         this.password = newPassword
     }
-
-    public setRole = (newRole: USER_ROLES) => {
-        this.role = newRole
-    }
 }
 
 export interface SignupInputDTO {
     name: unknown,
     email: unknown,
     password: unknown
+}
+
+export interface SignupOutputDTO {
+    message: string,
+    token: string
+}
+
+export interface LoginInputDTO {
+    email: unknown,
+    password: unknown
+}
+
+export interface LoginOutputDTO {
+    message: string,
+    token: string
 }
