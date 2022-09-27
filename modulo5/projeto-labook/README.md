@@ -6,7 +6,7 @@ Treinar e demonstrar habilidades com as principais tecnologias de desenvolviment
 
 Link para a documentação da API: https://documenter.getpostman.com/view/21555755/2s83S59rvj
 
-Desenvolvido por: Gabriel dos Santos https://www.linkedin.com/in/dev-gabriel-dos-santos-silva/
+Desenvolvido por: Gabriel dos Santos https://www.linkedin.com/in/gabriel-dos-santos-silva-a50999217/
 
 Informações:
 
@@ -50,10 +50,5 @@ Funcionalidades:
  Deletar um post que o pertença. Apenas admins podem deletar qualquer post que achar apropriado.
 
  Curtir um post.
- 
+
  Descurtir um post.
- 
- Como utilizar?
- 
- Recomendo também o uso do Postman para você testar as rotas, ele vai te ajudar a ter uma resposta "visual" das requisições e você também poderá usá-lo para enviar dados.
- Poderá usar a versão web, basta criar uma conta no link: https://identity.getpostman.com/signup . Após criar a conta poderá usá-lo no link: https://web.postman.co/ .
