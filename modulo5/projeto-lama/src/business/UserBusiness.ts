@@ -42,7 +42,7 @@ export class UserBusiness {
         const userDB = await this.userDatabase.findByEmail(email)
         
         if(userDB){
-            throw new Error("Email já cadastrado")
+            throw new Error("Email já cadastrado") 
         }
 
         const id = this.idGenerator.generate()
