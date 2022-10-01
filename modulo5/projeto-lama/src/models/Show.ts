@@ -50,3 +50,9 @@ export class Show {
         this.tickets = newTickets
     }
 }
+
+export interface CreateShowInputDTO{
+    band: string,
+    starts_at: string,
+    token: string
+}

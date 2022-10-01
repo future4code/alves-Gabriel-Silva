@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import { UserBusiness } from "../business/UserBusiness";
-import { BaseError } from "../errors/BaseError";
-import { SignupInputDTO } from "../models/User";
+import { LoginInputDTO, SignupInputDTO } from "../models/User";
 
 export class UserController {
     constructor(
@@ -16,14 +15,37 @@ export class UserController {
                 password: req.body.password
             }
 
+            const response = await this.userBusiness.signup(input)
 
-            
+            res.status(201).send(response)
+
         } catch (error: unknown) {
-            if(error instanceof BaseError){
-                res.status(400).send({message: error.message})
-            }
 
-            res.status(500).send("Um erro inesperado ocorreu :/")
+            if(error instanceof Error){
+                res.status(400).send({message: error.message})
+            } else {
+                res.status(500).send({message: "Um erro inesperado ocorreu :/"})
+            }
+        }
+    }
+
+    login = async(req: Request, res: Response) =>{
+        try {
+            const input: LoginInputDTO = {
+                email: req.body.email,
+                password: req.body.password
+            }
+            
+            const response = await this.userBusiness.login(input)
+
+            res.send(response)
+
+        } catch (error: unknown) {
+            if(error instanceof Error){
+                res.status(400).send({message: error.message})
+            }else{
+                res.status(500).send("Um erro inesperado ocorreu")
+            }
         }
     }
 }
