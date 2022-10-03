@@ -29,17 +29,17 @@ export const shows: IShowDB[] = [
     {
         id: "201",
         band: "Foo Fighters",
-        starts_at: new Date("2022/12/05")
+        starts_at: "2022/12/05"
     },
     {
         id: "202",
         band: "System of a Down",
-        starts_at: new Date("2022/12/06")
+        starts_at: "2022/12/06"
     },
     {
         id: "203",
         band: "Evanescence",
-        starts_at: new Date("2022/12/07")
+        starts_at: "2022/12/07"
     },
 ]
 
@@ -47,7 +47,7 @@ export const tickets: ITicketDB[] = [
     {
         id: "301",
         show_id: "201",
-        user_id: "101"
+        user_id: "id-mock"
     },
     {
         id: "302",

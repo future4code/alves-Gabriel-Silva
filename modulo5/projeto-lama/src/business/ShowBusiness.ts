@@ -153,6 +153,10 @@ export class ShowBusiness {
 
         const ticketExist = await this.showDatabase.findTicketByUser(payload.id)
 
+        if(!ticketExist){
+            throw new ParamsError()
+        }
+
         if(payload.role !== USER_ROLES.ADMIN && ticketExist?.user_id !== payload.id){
             throw new AuthorizationError()
         }
